@@ -6,21 +6,26 @@
 
 int main(int argc, char *argv[]) {
 	
-	char *pc;
-	int *pi;
-	double *pd;
+	int i;
+	int grade[5];
+	int average=0;
 	
-	pc=(char*)10000;
-	pi=(int*)10000;
-	pd=(double*)10000;
 	
-	printf("증가전: pc=%d, pi=%d, pd=%d\n", pc,pi,pd);
+	for(i=0;i<5;i++)
+	{
+		printf("input value [%i]= ",i);
+		scanf("%d", &grade[i]);
+	}
 	
-	pc++;
-	pi++;
-	pd++;
+	for(i=0;i<5;i++)
+	{
+		printf("grade[%i]=  %i\n", i, *(grade+i));
+		average= average+ *(grade+i);
 	
-	printf("증가후: pc=%d, pi=%d, pd=%d\n", pc,pi,pd);
+	}
+	
+	printf("average= %i\n", average/5);
+	
 	
 	return 0;
 }
